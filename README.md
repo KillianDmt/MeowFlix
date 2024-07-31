@@ -56,6 +56,7 @@ Meowflix is deployed on [Platform Name](url). You can visit the live site at [UR
 - Mobile app development
 - Integration with smart home devices for automated play
 - Personalized profiles for multiple cats in a household
+- Trying to use Graph QL and React.js
 
 
 ---
