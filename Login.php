@@ -1,5 +1,7 @@
 <?php 
+/* Il faut appeler session_start() sur chacune de vos pages AVANT d'écrire le moindre code HTML ou PHP (avant même la balise  <!DOCTYPE>  ). 
 
+Si vous oubliez de lancer session_start()  , vous ne pourrez pas accéder à la variable superglobale   $_SESSION  */
 
     if($_SERVER["REQUEST_METHOD"] == "POST") {
       $email = $_POST["email"];
@@ -28,6 +30,17 @@
       
           if ($_POST['password'] == $Password) {
               echo "Connexion réussie";
+              session_start();
+              $queryUser = $pdo-> prepare('SELECT username FROM utilisateur WHERE email = ?');
+              $queryUser->execute(array($_POST['email']));
+              $_SESSION['username']=$query2->fetchColumn();
+              echo $_SESSION['username'];
+              $queryRole = $pdo->prepare('SELECT role From utilisateur WHERE email = ?');
+              $queryRole->execute(array($_POST['email']));
+              $_SESSION['role']=$queryRole->fetchColumn();
+              header("Location : {url}");
+              exit();
+
           } else {
               echo "Mot de passe incorrect";
           }

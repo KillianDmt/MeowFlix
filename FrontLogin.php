@@ -26,7 +26,7 @@
                         <a href="#">Register</a>
                     </div>
                     <div class="PasswordLost">
-                        <a href="#">Forgot password?</a>
+                        <a href="LostPass.php">Forgot password?</a>
                     </div>
                 </form>
             </div>

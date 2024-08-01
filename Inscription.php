@@ -25,3 +25,7 @@
         echo "Inscription Reussie !";
         header ("index.html");
     }
+
+    // inclure caracters obligations
+
+    
