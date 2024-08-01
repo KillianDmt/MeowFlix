@@ -19,7 +19,7 @@
                     <input type="password" name="password" placeholder="Password" required>
                     <button type="submit" class="signin-button">Sign In</button>
                     <div class="remember-me">
-                        <input type="checkbox" name="newsletterOn" id="remember-me">
+                        <input type="checkbox" name="Cookies" id="remember-me">
                         <label for="remember-me">Remember me</label>
                     </div>
                     <div class="Register">
