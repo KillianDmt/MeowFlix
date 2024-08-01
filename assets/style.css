@@ -16,7 +16,7 @@ body {
 }
 
 .background {
-    background-image: url('images/theatre-551797_1920.jpg');
+    background-image: url('images/background.jpg');
     background-position: center;
     filter: brightness(80%);
     position: fixed;
@@ -37,8 +37,8 @@ body {
     box-sizing: border-box;
 }
 .logo {
-    width: 150px;
-    margin-bottom: 20px;
+    width: 300px;
+    filter: brightness(90%);
 }
 .login-box {
     background-color: rgba(0, 0, 0, 0.75);
@@ -75,6 +75,9 @@ input {
     cursor: pointer;
     margin-top: 24px;
     margin-bottom: 12px;
+}
+.signin-button:hover{
+    background-color: #ea333c;
 }
 .alternate-signin {
     text-align: center;
@@ -123,4 +126,9 @@ footer {
     text-decoration: none;
     margin-right: 16px;
     margin-bottom: 16px;
+    
 }
+a:hover {
+    color: white;
+}
+
