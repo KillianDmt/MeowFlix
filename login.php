@@ -1,31 +1,36 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Streaming Service</title>
-    <link rel="stylesheet" href="assets/style.css"
+    <link rel="stylesheet" href="assets/style.css"> 
+    <link rel="icon"  href="assets\images\minilogo.png" type="image/icon">
 </head>
-<body>
-
     <body>
         <div class="background"></div>
         <div class="container">
-            <img src="https://assets.nflxext.com/en_us/layout/ecweb/netflix-logo.svg" alt="Meowflix" class="logo">
+            <img src="assets\images\logo.png" alt="Cattoflix logo" class="logo">
             <div class="login-box">
                 <h1>Sign In</h1>
                 <form>
-                    <input type="text" placeholder="Email or phone number" required>
+                    <input type="text" placeholder="Email" required>
                     <input type="password" placeholder="Password" required>
                     <button type="submit" class="signin-button">Sign In</button>
                     <div class="remember-me">
                         <input type="checkbox" id="remember-me">
                         <label for="remember-me">Remember me</label>
                     </div>
+                </form>
+                <form method="$_POST">
                     <div class="alternate-signin">
-                        <a href="#">Forgot password?</a>
+                        <a href="#">New to Cattoflix? Register now</a>
                     </div>
                 </form>
+                <div class="alternate-signin">
+                    <a href="#">Forgot Password?</a>
+                </div>
             </div>
         </div>
         <footer>
