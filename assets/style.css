@@ -38,7 +38,7 @@ body {
 }
 .logo {
     width: 300px;
-    filter: brightness(90%);
+    filter: brightness(85%);
 }
 .login-box {
     background-color: rgba(0, 0, 0, 0.75);
