@@ -1,6 +1,8 @@
 <?php
 // Authentification
     function formSignUp () {
+        echo"<div class='login-box'>";
+        echo"<h1>Sign Up</h1>";
         echo "<form action='Login.php' method='POST'>";
                     echo "<input type='text' name='email' placeholder='Email' required>";
                     echo "<input type='text' name='username' placeholder='Username' required>";
@@ -11,15 +13,20 @@
                         echo "<label for='remember-me'>Remember me</label>";
                     echo "</div>";
                     echo "<div class='Register'>";
-                        echo "<a href='#'>Register</a>";
+                        echo "<a onclick='formSignIn()'>Register</a>";
                     echo "</div>";
                     echo "<div class='PasswordLost'>";
-                        echo "<a href='LostPass.php'>Forgot password?</a>";
+                        echo "<a onclick='formLostPass()'>Forgot password?</a>";
                     echo "</div>";
                 echo "</form>";
+                echo "</div>";
     }
 
     function formSignIn () {
+        echo"<div class='login-box'>";
+
+        echo"<h1>Sign In</h1>";
+
         echo "<form action='Login.php' method='POST'>";
                     echo "<input type='text' name='email' placeholder='Email' required>";
                     echo "<input type='password' name='password' placeholder='Password' required>";
@@ -35,4 +42,9 @@
                         echo "<a href='LostPass.php'>Forgot password?</a>";
                     echo "</div>";
                 echo "</form>";
+                echo "</div>";
     }
+
+    if (isset($_POST["formSignIn"])) {formSignIn();}
+    if (isset($_POST["formSignUp"])) {formSignUp();}
+    if (isset($_POST["formLostPass"])) {header("Location: ./LostPass.php");}

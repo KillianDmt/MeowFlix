@@ -23,7 +23,7 @@
         $query = $pdo ->prepare("INSERT INTO utilisateur (`email`, `username`, `password`, `admin`) VALUES (?,?,?,?)");
         $query -> execute(array($email, $username, $password, $role)); //use of md5 to secure pass ? 
         echo "Inscription Reussie !";
-        header ("index.php");
+        header ("Login.php");
     }
 
     // inclure caracters obligations
