@@ -1,3 +1,6 @@
+<?php
+require_once ('FormFunction.php');
+?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -8,30 +11,15 @@
     <link rel="stylesheet" href="assets/style.css">
     <link rel="icon" href="assets\images\minilogo.png" type="image/icon">
 </head>
+    <body>
+        <div class="background"></div>
+        <div class="container">
+            <img src="assets\images\logo.png" alt="Cattoflix logo" class="logo">
+            <?php 
+            require_once './FormFunction.php';
 
-<body>
-    <div class="background"></div>
-    <div class="container">
-        <img src="assets\images\logo.png" alt="Cattoflix logo" class="logo">
-        <div class="login-box">
-            <h1>Sign In</h1>
-            <form>
-                <input type="text" placeholder="Email" required>
-                <input type="password" placeholder="Password" required>
-                <button type="submit" class="signin-button">Sign In</button>
-                <div class="remember-me">
-                    <input type="checkbox" id="remember-me">
-                    <label for="remember-me">Remember me</label>
-                </div>
-            </form>
-            <form method="$_POST">
-                <div class="alternate-signin">
-                    <a href="#">New to Cattoflix? Register now</a>
-                </div>
-            </form>
-            <div class="alternate-signin">
-                <a href="#">Forgot Password?</a>
-            </div>
+            formSignIn();
+            ?>
         </div>
     </div>
     <footer>
@@ -40,9 +28,10 @@
                 <a href="#">link to github code source</a>
                 <a href="#">link to deployed site</a>
             </div>
-        </div>
-    </footer>
-</body>
+
+        </footer>
+        
+    </body>
 
 
 </html>
