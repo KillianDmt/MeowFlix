@@ -12,24 +12,33 @@
     <header>
         <nav>
             <div class="logodiv">
-                <img alt="logo" src="assets\images\logo.png">
+                <img src="assets\images\logo.png">
                 <h1>CATTOFLIX</h1>
             </div>
-            <div>
-                
-                <input type="search">
-                <button><i class="fa-solid fa-bars"></i></button>
+            <div class="searchdiv">
+                <input type="search" placeholder="Search for any movie">
+                <!-- <button><i class="fa-solid fa-bars"></i></button> -->
             </div>
         </nav>
     </header>
     <aside>
-        <div class="sidebar-content">
+        <div class="sidebar-content1">
+            <!-- <img alt="logo" src="assets\images\logo.png"> -->
             <h1>Genres</h1>
             <ul>
-                <li><i class="fas fa-home"></i> Home</li>
-                <li><i class="fas fa-tv"></i>TV Shows</li>
-                <li><i class="fas fa-film"></i> Movies</li>
-                <li><i class="fas fa-plus"></i> My List</li>
+                <li><a href="">Birds</a></li>
+                <li><a href="">Fish</a></li>
+                <li><a href="">Wild</a></li>
+                <li><a href="">Cathub</a></li>
+            </ul>
+        </div>
+        <div class="sidebar-content2">
+            <h1>Options</h1>
+            <ul>
+                <li><a href="">Something</a></li>
+                <li><a href="">Something</a></li>
+                <li><a href="">Something</a></li>
+                <li><a href="">Something</a></li>
             </ul>
         </div>
         <div class="logout-container">
@@ -47,6 +56,43 @@
             </div>
         </div>
         <main>
+            <h2 id="titlecarousel1" class="row-title">New this week</h2>
+            <div id="carousel1" class="slider" style="
+                --width: 200px;
+                --height: 200px;
+                --quantity: 9;
+            ">
+                <div class="list">
+                    <div class="item" style="--position: 1"><img src="https://via.placeholder.com/200x300?text=Movie+1" alt=""></div>
+                    <div class="item" style="--position: 2"><img src="https://via.placeholder.com/200x300?text=Movie+1" alt=""></div>
+                    <div class="item" style="--position: 3"><img src="https://via.placeholder.com/200x300?text=Movie+1" alt=""></div>
+                    <div class="item" style="--position: 4"><img src="https://via.placeholder.com/200x300?text=Movie+1" alt=""></div>
+                    <div class="item" style="--position: 5"><img src="https://via.placeholder.com/200x300?text=Movie+1" alt=""></div>
+                    <div class="item" style="--position: 6"><img src="https://via.placeholder.com/200x300?text=Movie+1" alt=""></div>
+                    <div class="item" style="--position: 7"><img src="https://via.placeholder.com/200x300?text=Movie+1" alt=""></div>
+                    <div class="item" style="--position: 8"><img src="https://via.placeholder.com/200x300?text=Movie+1" alt=""></div>
+                    <div class="item" style="--position: 9"><img src="https://via.placeholder.com/200x300?text=Movie+1" alt=""></div>
+                </div>
+            </div>
+            
+            <h2 id="titlecarousel2"class="row-title">New this week</h2>
+            <div id="carousel2" class="slider" reverse="true" style="
+                --width: 200px;
+                --height: 200px;
+                --quantity: 9;
+            ">
+                <div class="list">
+                    <div class="item" style="--position: 1"><img src="https://via.placeholder.com/200x300?text=Movie+1" alt=""></div>
+                    <div class="item" style="--position: 2"><img src="https://via.placeholder.com/200x300?text=Movie+1" alt=""></div>
+                    <div class="item" style="--position: 3"><img src="https://via.placeholder.com/200x300?text=Movie+1" alt=""></div>
+                    <div class="item" style="--position: 4"><img src="https://via.placeholder.com/200x300?text=Movie+1" alt=""></div>
+                    <div class="item" style="--position: 5"><img src="https://via.placeholder.com/200x300?text=Movie+1" alt=""></div>
+                    <div class="item" style="--position: 6"><img src="https://via.placeholder.com/200x300?text=Movie+1" alt=""></div>
+                    <div class="item" style="--position: 7"><img src="https://via.placeholder.com/200x300?text=Movie+1" alt=""></div>
+                    <div class="item" style="--position: 8"><img src="https://via.placeholder.com/200x300?text=Movie+1" alt=""></div>
+                    <div class="item" style="--position: 9"><img src="https://via.placeholder.com/200x300?text=Movie+1" alt=""></div>
+                </div>
+            </div>
             <h2 id="titlecarousel1" class="row-title">New this week</h2>
             <div id="carousel1" class="slider" style="
                 --width: 200px;
