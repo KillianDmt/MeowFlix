@@ -38,6 +38,7 @@ Si vous oubliez de lancer session_start()  , vous ne pourrez pas accéder à la 
               $queryRole = $pdo->prepare('SELECT role From utilisateur WHERE email = ?');
               $queryRole->execute(array($_POST['email']));
               $_SESSION['role']=$queryRole->fetchColumn();
+              
               /* Cookies ?
               $Remembered = $_POST['Cookies'];
                 if ($Remembered == "true") {
