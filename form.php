@@ -19,11 +19,11 @@
             <?php if (isset($_GET['error']) && $_GET['form'] === 'login') { ?>
                     <div class="alert"><span class="closebtn" onclick="this.parentElement.style.display='none';">&times;</span><?=$_GET['error']?></div>
                 <?php }?>
-                <input type="text" name='email' placeholder="Email" required>
-                <input type="password" name='password' placeholder="Password" required>
+                <input type="text" name='email' placeholder="Email">
+                <input type="password" name='password' placeholder="Password">
                 <button type="submit" name="sign" class="signin-button">Sign In</button>
                 <div class="remember-me">
-                    <input type="checkbox" id="remember-me">
+                    <input type="checkbox" class="remember-me" id="remember1">
                     <label for="remember-me">Remember me</label>
                 </div>
                 <div class="alternate-signin">
@@ -32,16 +32,16 @@
 
             </form>
             <form id="form2" action="Inscription.php" method="post" style="display: none;">
-            <h1>Register now</h1>
-            <?php if (isset($_GET['error']) && $_GET['form'] === 'register') { ?>
+                <h1>Register now</h1>
+                <?php if (isset($_GET['error']) && $_GET['form'] === 'register') { ?>
                     <div class="alert"><span class="closebtn" onclick="this.parentElement.style.display='none';">&times;</span><?=$_GET['error']?></div>
                 <?php } ?>
-                <input type="text" name='username' placeholder="Username" required>
-                <input type="text" name='email' placeholder="Email" required>
-                <input type="password" name='password' placeholder="Password" required>
+                <input type="text" name='username' placeholder="Username">
+                <input type="text" name='email' placeholder="Email">
+                <input type="password" name='password' placeholder="Password">
                 <button type="submit" name="register" class="signin-button">Register</button>
                 <div class="remember-me">
-                    <input type="checkbox" id="remember-me">
+                    <input type="checkbox" class="remember-me" id="remember2">
                     <label for="remember-me">Remember me</label>
                 </div>
                 <div class="alternate-signin">

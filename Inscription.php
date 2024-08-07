@@ -2,45 +2,42 @@
 
 //Inscription
 
-    // $servername = 'localhost';
-    // $username = 'root';
-    // $password = '';
-    // $dbname = 'meowflix';
-    // // Establish the connection
-    // try {
-    // $pdo = new PDO("mysql:host=$servername, dbname= $dbname", $username, $password);
-    // } 
-    // catch (PDOException $e) {
-    //     echo $e->getMessage();
-    // }
-    include 'db.php';
+include 'db.php';
 
-    
-    if (isset($_POST["email"]) && isset($_POST["password"])) {
-        if(!filter_var($_POST['email'], FILTER_VALIDATE_EMAIL) ){
-
-            header('Location: login2.php?error=Invalid email format&form=register');
-            
-        } else {
-            function validate($data) {
-                $data = trim($data);
-                $data = stripslashes($data);
-                $data = htmlspecialchars($data);
-                return $data;
-            }
-            $email = $_POST["email"];
-            $username = validate($_POST["username"]);
-            $password = validate($_POST["password"]);
-            $role = "none";
-        
-            $query = $pdo ->prepare("INSERT INTO utilisateur (`email`, `username`, `password`, `role`) VALUES (?,?,?,?)");
-            $query -> execute(array($email, $username, $password, $role)); //use of md5 to secure pass ? 
-            echo "Inscription Reussie !";
-            header ("main.php");
-        }
+if (isset($_POST["email"]) && isset($_POST["password"]) && isset($_POST["username"])) {
+    function validate($data) {
+        $data = trim($data);
+        $data = stripslashes($data);
+        $data = htmlspecialchars($data);
+        return $data;
     }
 
+    $email = validate($_POST["email"]);
+    $username = validate($_POST["username"]);
+    $password = validate($_POST["password"]);
 
-    // inclure caracters obligations
+    if (empty($email)) {
+        header('Location: form.php?error=Email is required&form=register');
+        exit();
+    } elseif (empty($username)) {
+        header('Location: form.php?error=Username is required&form=register');
+        exit();
+    } elseif (empty($password)) {
+        header('Location: form.php?error=Password is required&form=register');
+        exit();
+    } elseif (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
+        header('Location: form.php?error=Invalid email format&form=register');
+        exit();
+    } else {
+        $role = "none";
 
+        $query = $pdo->prepare("INSERT INTO utilisateur (`email`, `username`, `password`, `role`) VALUES (?,?,?,?)");
+        $query->execute(array($email, $username, $password, $role));
+        header('Location: main.php');
+        exit();
+    }
+} else {
+    header('Location: form.php?error=All fields are required&form=register');
+    exit();
+}
 
