@@ -23,16 +23,13 @@ nav {
 
 nav h1 {
     color: #e50914;
-    margin: 0;
-    font-size: 3.5em;
+    margin: 25px 0 0 0;
+    font-size: 3.8em;
 }
 nav img {
-    width: 200px;
-    margin-right: 20px;
+    width: 250px;
+    margin-right: 25px;
 }
-/* aside img {
-    width: 200px;
-} */
 
 .logodiv{
     display: flex;
@@ -44,7 +41,7 @@ nav img {
 .searchdiv input{
     height: 2.5em;
     width: 50%;
-    margin: 20px 0 20px 200px;
+    margin: 40px 0 0 200px;
     background-color: rgba(109, 109, 110, 0.376);
     border: none;
     border-radius: 0.5em;
@@ -105,7 +102,7 @@ aside li a:active {
     background-size: cover;
     background-position: center;
     grid-area: featured;
-    margin-right: 80px;
+    margin: 25px 80px 0 0;
     border-radius: 3em;
 }
 .featured-content {

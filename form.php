@@ -57,10 +57,11 @@
     <footer>
         <div class="footer-content">
             <div class="footer-links">
-                <a href="#">link to github code source</a>
+                <a href="https://github.com/KillianDmt/MeowFlix">link to github code source</a>
                 <a href="#">link to deployed site</a>
+                
             </div>
-        </div>
+            <a href="https://becode.org/"><img src="assets\images\becodelogo.png"></a>
     </footer>
     <script src="feature\formscript.js"></script>
 </body>

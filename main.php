@@ -1,3 +1,17 @@
+<?php 
+session_start();
+
+if (isset($_SESSION['id']) && isset($_SESSION['username'])) {
+
+    if (isset($_POST['logout'])) {
+
+        session_unset();
+        session_destroy();
+
+        header("Location: form.php");
+    }
+?>
+
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -14,6 +28,7 @@
             <div class="logodiv">
                 <img src="assets\images\logo.png">
                 <h1>CATTOFLIX</h1>
+                <p>Hello, <?php echo $_SESSION['username'];?></p>
             </div>
             <div class="searchdiv">
                 <input type="search" placeholder="Search for any movie">
@@ -42,7 +57,7 @@
             </ul>
         </div>
         <div class="logout-container">
-            <button class="logout"><i class="fas fa-sign-out-alt"></i> Logout</button>
+            <form action="" method="post"><button type="submit" name="logout" class="logout"><i class="fas fa-sign-out-alt"></i> Logout</button></form>
         </div>
     </aside>
     <!-- <div> if u want the space to the right side just re-active this div-->
@@ -135,3 +150,6 @@
     <!-- </div> -->
   </body>
 </html>
+<?php }else {
+    header('Location: form.php');
+} ?>

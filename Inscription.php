@@ -33,7 +33,7 @@ if (isset($_POST["email"]) && isset($_POST["password"]) && isset($_POST["usernam
 
         $query = $pdo->prepare("INSERT INTO utilisateur (`email`, `username`, `password`, `role`) VALUES (?,?,?,?)");
         $query->execute(array($email, $username, $password, $role));
-        header('Location: main.php');
+        header('Location: form.php?error=You are registred! Log in now!&form=login');
         exit();
     }
 } else {
