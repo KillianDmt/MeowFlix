@@ -112,7 +112,7 @@ footer {
 }
 .footer-content {
     display: flex;
-    justify-content:end;
+    justify-content: center;
     max-width: 1000px;
     margin: 0 auto;
     color: #737373;
