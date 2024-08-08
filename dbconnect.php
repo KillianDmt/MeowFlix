@@ -4,7 +4,7 @@
 		private $dbName = 'meowflix';
 		private $user = 'root';
 		private $pass = '';
-
+		
 		public function connect() {
 			try {
 				$conn = new PDO('mysql:host=' . $this->host . '; dbname=' . $this->dbName, $this->user, $this->pass);

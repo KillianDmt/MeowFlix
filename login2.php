@@ -14,7 +14,7 @@
     <div class="container">
         <img src="assets\images\logo.png" alt="Cattoflix logo" class="logo">
         <div class="login-box">
-            <form id="form1" action="login.php" method="post">
+            <form id="form1" action="login2.php" method="post">
             <h1>Sign In</h1>
             <?php if (isset($_GET['error']) && $_GET['form'] === 'login') { ?>
                     <div class="alert"><span class="closebtn" onclick="this.parentElement.style.display='none';">&times;</span><?=$_GET['error']?></div>

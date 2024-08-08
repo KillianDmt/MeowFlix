@@ -21,10 +21,10 @@ $conn = $db ->connect();
     $stmt -> bindParam(":title", $item -> snippet -> title) ;
     $stmt -> bindParam(":descr", $item -> snippet -> description) ;
     $stmt -> bindParam(":thumb", $item -> snippet ->thumbnails->default -> url) ;
+    $stmt -> bindParam(":tag", $item -> snippet -> tag);
     $stmt -> execute();
-    
+
 
 }
-
 
     

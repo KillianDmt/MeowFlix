@@ -22,6 +22,7 @@
             header('Location: login2.php?error=Invalid email format&form=register');
             
         } else {
+            
             function validate($data) {
                 $data = trim($data);
                 $data = stripslashes($data);
@@ -39,7 +40,20 @@
             header ("main.php");
         }
     }
-
+    function emailExists($email) 
+        // Supposons que $db est votre connexion à la base de données
+        $query = "SELECT COUNT(*) FROM utilisateurs WHERE email = ?";
+        $stmt = $pdo->prepare($query);
+        $stmt->execute([$email]);
+        return $stmt->fetchColumn() > 0;
+    
+    
+    // Lors de l'inscription
+    if (emailExists($email)) {
+        echo "Cette adresse e-mail est déjà utilisée.";
+    } else {
+        // Procédez à l'inscription
+    }
 
     // inclure caracters obligations
 
