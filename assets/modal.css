@@ -12,7 +12,7 @@
     max-height: 647px;
     
 
-    display: grid;
+    display: none;
     grid-template-columns: 55% 45%;
     grid-template-areas: 'modal-header modal-body';
 }

@@ -81,15 +81,69 @@ if (isset($_SESSION['id']) && isset($_SESSION['username'])) {
                 --quantity: 9;
             ">
                 <div class="list">
-                    <div class="item" style="--position: 1"><img src="https://via.placeholder.com/200x300?text=Movie+1" alt=""></div>
-                    <div class="item" style="--position: 2"><img src="https://via.placeholder.com/200x300?text=Movie+1" alt=""></div>
-                    <div class="item" style="--position: 3"><img src="https://via.placeholder.com/200x300?text=Movie+1" alt=""></div>
-                    <div class="item" style="--position: 4"><img src="https://via.placeholder.com/200x300?text=Movie+1" alt=""></div>
-                    <div class="item" style="--position: 5"><img src="https://via.placeholder.com/200x300?text=Movie+1" alt=""></div>
-                    <div class="item" style="--position: 6"><img src="https://via.placeholder.com/200x300?text=Movie+1" alt=""></div>
-                    <div class="item" style="--position: 7"><img src="https://via.placeholder.com/200x300?text=Movie+1" alt=""></div>
-                    <div class="item" style="--position: 8"><img src="https://via.placeholder.com/200x300?text=Movie+1" alt=""></div>
-                    <div class="item" style="--position: 9"><img src="https://via.placeholder.com/200x300?text=Movie+1" alt=""></div>
+                    <div class="item" style="--position: 1"
+                        data-title="Movie Title 1"
+                        data-author="Author Name"
+                        data-description="Description of the movie goes here."
+                        data-video-url="https://www.youtube.com/embed/VIDEO_ID">
+                        <img src="https://via.placeholder.com/200x300?text=Movie+1" alt="">
+                    </div>
+                    <div class="item" style="--position: 2"
+                        data-title="Movie Title 1"
+                        data-author="Author Name"
+                        data-description="Description of the movie goes here."
+                        data-video-url="https://www.youtube.com/embed/VIDEO_ID">
+                        <img src="https://via.placeholder.com/200x300?text=Movie+1" alt="">
+                    </div>
+                    <div class="item" style="--position: 3"
+                        data-title="Movie Title 1"
+                        data-author="Author Name"
+                        data-description="Description of the movie goes here."
+                        data-video-url="https://www.youtube.com/embed/VIDEO_ID">
+                        <img src="https://via.placeholder.com/200x300?text=Movie+1" alt="">
+                    </div>
+                    <div class="item" style="--position: 4"
+                        data-title="Movie Title 1"
+                        data-author="Author Name"
+                        data-description="Description of the movie goes here."
+                        data-video-url="https://www.youtube.com/embed/VIDEO_ID">
+                        <img src="https://via.placeholder.com/200x300?text=Movie+1" alt="">
+                    </div>
+                    <div class="item" style="--position: 5"
+                        data-title="Movie Title 1"
+                        data-author="Author Name"
+                        data-description="Description of the movie goes here."
+                        data-video-url="https://www.youtube.com/embed/VIDEO_ID">
+                        <img src="https://via.placeholder.com/200x300?text=Movie+1" alt="">
+                    </div>
+                    <div class="item" style="--position: 6"
+                        data-title="Movie Title 1"
+                        data-author="Author Name"
+                        data-description="Description of the movie goes here."
+                        data-video-url="https://www.youtube.com/embed/VIDEO_ID">
+                        <img src="https://via.placeholder.com/200x300?text=Movie+1" alt="">
+                    </div>
+                    <div class="item" style="--position: 7"
+                        data-title="Movie Title 1"
+                        data-author="Author Name"
+                        data-description="Description of the movie goes here."
+                        data-video-url="https://www.youtube.com/embed/VIDEO_ID">
+                        <img src="https://via.placeholder.com/200x300?text=Movie+1" alt="">
+                    </div>
+                    <div class="item" style="--position: 8"
+                        data-title="Movie Title 1"
+                        data-author="Author Name"
+                        data-description="Description of the movie goes here."
+                        data-video-url="https://www.youtube.com/embed/VIDEO_ID">
+                        <img src="https://via.placeholder.com/200x300?text=Movie+1" alt="">
+                    </div>
+                    <div class="item" style="--position: 9"
+                        data-title="Movie Title 1"
+                        data-author="Author Name"
+                        data-description="Description of the movie goes here."
+                        data-video-url="https://www.youtube.com/embed/VIDEO_ID">
+                        <img src="https://via.placeholder.com/200x300?text=Movie+1" alt="">
+                    </div>
                 </div>
             </div>
 
@@ -157,7 +211,7 @@ if (isset($_SESSION['id']) && isset($_SESSION['username'])) {
             <button class="close-modal">X</button>
             <div class="modal-header">
                 <div class="modal-video">
-                <iframe class="video-player" src="https://www.youtube.com/embed/yySWoxNgoQM?si=uZ7CAPVi3NlewpWd&amp;controls=0" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                    <iframe class="video-player" src="https://www.youtube.com/embed/yySWoxNgoQM?si=uZ7CAPVi3NlewpWd&amp;controls=0" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
                 </div>
                 <div class="modal-descriptions">
                     <h1 class="title">Insert title</h1>
@@ -168,46 +222,48 @@ if (isset($_SESSION['id']) && isset($_SESSION['username'])) {
             <div class="modal-body">
                 <h2>Comments</h2>
                 <form action="" method="post">
-                <input type="text" name="message" placeholder="Leave a comment here">
-                <button type="submit" name="send" class="send">Send</button>
+                    <input type="text" name="message" placeholder="Leave a comment here">
+                    <button type="submit" name="send" class="send">Send</button>
                 </form>
-                    
+
                 <div class="modal-comments">
 
                     <!-- start example of comment...we will generate them with php from the database so I know what I did is usless u.u-->
-                     <?php if(isset($_POST['send'])) {?>
-                    <div class="comment">
-                        <p class="date"><?=date('Y-m-d H:i:s');?></p>
-                        <h3><?=$_SESSION['username'];?>:</h3>
-                        <p class="message-txt"><?=$_POST['message'];?></p>
-                    </div>
-                    <div class="comment">
-                        <p class="date"><?=date('Y-m-d H:i:s');?></p>
-                        <h3><?=$_SESSION['username'];?>:</h3>
-                        <p class="message-txt"><?=$_POST['message'];?></p>
-                    </div>
-                    <div class="comment">
-                        <p class="date"><?=date('Y-m-d H:i:s');?></p>
-                        <h3><?=$_SESSION['username'];?>:</h3>
-                        <p class="message-txt"><?=$_POST['message'];?></p>
-                    </div>
-                    <div class="comment">
-                        <p class="date"><?=date('Y-m-d H:i:s');?></p>
-                        <h3><?=$_SESSION['username'];?>:</h3>
-                        <p class="message-txt"><?=$_POST['message'];?></p>
-                    </div>
-                    <div class="comment">
-                        <p class="date"><?=date('Y-m-d H:i:s');?></p>
-                        <h3><?=$_SESSION['username'];?>:</h3>
-                        <p class="message-txt"><?=$_POST['message'];?></p>
-                    </div>
+                    <?php if (isset($_POST['send'])) { ?>
+                        <div class="comment">
+                            <p class="date"><?= date('Y-m-d H:i:s'); ?></p>
+                            <h3><?= $_SESSION['username']; ?>:</h3>
+                            <p class="message-txt"><?= $_POST['message']; ?></p>
+                        </div>
+                        <div class="comment">
+                            <p class="date"><?= date('Y-m-d H:i:s'); ?></p>
+                            <h3><?= $_SESSION['username']; ?>:</h3>
+                            <p class="message-txt"><?= $_POST['message']; ?></p>
+                        </div>
+                        <div class="comment">
+                            <p class="date"><?= date('Y-m-d H:i:s'); ?></p>
+                            <h3><?= $_SESSION['username']; ?>:</h3>
+                            <p class="message-txt"><?= $_POST['message']; ?></p>
+                        </div>
+                        <div class="comment">
+                            <p class="date"><?= date('Y-m-d H:i:s'); ?></p>
+                            <h3><?= $_SESSION['username']; ?>:</h3>
+                            <p class="message-txt"><?= $_POST['message']; ?></p>
+                        </div>
+                        <div class="comment">
+                            <p class="date"><?= date('Y-m-d H:i:s'); ?></p>
+                            <h3><?= $_SESSION['username']; ?>:</h3>
+                            <p class="message-txt"><?= $_POST['message']; ?></p>
+                        </div>
                     <?php }; ?>
                     <!-- end comment generated -->
 
                 </div>
             </div>
         </div>
+        <script src="feature\modal.js"></script>
     </body>
+
     </html>
 <?php } else {
     header('Location: form.php');
