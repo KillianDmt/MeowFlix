@@ -88,7 +88,7 @@ input {
     text-decoration: none;
 }
 .remember-me {
-    display: flex;
+    display: inline;
     align-items: center;
     color: #b3b3b3;
     font-size: 13px;
@@ -111,20 +111,22 @@ footer {
     min-height: 10vh;
 }
 .footer-content {
+    display: flex;
+    justify-content: center;
     max-width: 1000px;
     margin: 0 auto;
     color: #737373;
-    font-size: 13px;
+    font-size: 15px;
 }
 .footer-links {
     display: flex;
     flex-wrap: wrap;
-    margin-top: 16px;
+    margin-top: 10px;
 }
 .footer-links a {
     color: #737373;
     text-decoration: none;
-    margin-right: 16px;
+    margin-right: 25px;
     margin-bottom: 16px;
     
 }
@@ -132,3 +134,25 @@ a:hover {
     color: white;
 }
 
+ /* The alert message box */
+ .alert {
+    padding: 20px;
+    background-color: #f44336; 
+    color: white;
+    margin-bottom: 15px;
+  }
+  
+  .closebtn {
+    margin-left: 15px;
+    color: white;
+    font-weight: bold;
+    float: right;
+    font-size: 22px;
+    line-height: 20px;
+    cursor: pointer;
+    transition: 0.3s;
+  }
+
+  .closebtn:hover {
+    color: black;
+  } 

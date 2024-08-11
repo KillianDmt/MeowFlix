@@ -1,13 +1,13 @@
 
-# Meowflix: Streaming for Cats
+# Cattoflix: Streaming for Cats
 
-## What is Meowflix?
+## What is Cattoflix?
 
-Meowflix is a streaming platform designed exclusively for our feline friends. Inspired by Netflix, we've created a website that offers a curated selection of videos cats love to watch, including birds, fish, and other enticing content for curious kitties.
+Cattoflix is a streaming platform designed exclusively for our feline friends. Inspired by Netflix, we've created a website that offers a curated selection of videos cats love to watch, including birds, fish, and other enticing content for curious kitties.
 
-## Why Meowflix?
+## Why Cattoflix?
 
-In a world where humans have countless streaming options, we felt it was time for cats to have their own dedicated platform. Meowflix aims to entertain and stimulate cats, providing them with a safe and engaging digital playground.
+In a world where humans have countless streaming options, we felt it was time for cats to have their own dedicated platform. Cattoflix aims to entertain and stimulate cats, providing them with a safe and engaging digital playground.
 
 ## When was it developed?
 
@@ -15,7 +15,7 @@ This project was developed as part of a 13-day coding challenge from August 1st 
 
 ## How it works
 
-Meowflix is built using HTML, CSS, JavaScript, and PHP. It features a user-friendly interface that allows cat owners to easily navigate and select videos for their pets. The platform includes:
+Cattoflix is built using HTML, CSS, JavaScript, and PHP. It features a user-friendly interface that allows cat owners to easily navigate and select videos for their pets. The platform includes:
 
 - User authentication system 
 - Customized video recommendations 
@@ -25,7 +25,7 @@ Meowflix is built using HTML, CSS, JavaScript, and PHP. It features a user-frien
 
 ## Who made it?
 
-Meowflix was created by a team of three developers:
+Cattoflix was created by a team of three developers:
 
 - Killian: Backend Developer
 - Alexis: Backend Developer
@@ -49,7 +49,7 @@ Meowflix was created by a team of three developers:
 
 ## Deployment
 
-Meowflix is deployed on [Platform Name](url). You can visit the live site at [URL to be added upon completion](url).
+Cattoflix is deployed on [Platform Name](url). You can visit the live site at [URL to be added upon completion](url).
 
 ## Future Improvements
 
