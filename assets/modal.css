@@ -7,11 +7,13 @@
     top: 5%;
     left: 15%;
     right: 15%;
+    bottom: 10%;
     box-shadow: 0 0 20em 25em rgb(10, 10, 10);
-    overflow-y: auto;
+    max-height: 647px;
+    
 
     display: grid;
-    grid-template-columns: 60% 40%;
+    grid-template-columns: 55% 45%;
     grid-template-areas: 'modal-header modal-body';
 }
 
@@ -23,6 +25,7 @@
 
 .modal-header {
     grid-area: modal-header;
+    max-height: fit-content;
 }
 
 .video-player{
@@ -35,9 +38,7 @@
     margin: 20px 0 20px 20px;
     padding: 10px 10px 10px 20px;
     background-color: rgba(2, 1, 1, 0.573);
-    max-width: 900px;
 }
-
 .modal-descriptions .author {
     display: block;
     padding-bottom: 1em;
@@ -63,17 +64,18 @@
 /* comments */
 .modal-body {
     grid-area: modal-body;
-    background-color: rgba(2, 1, 1, 0.573);
-    margin: 20px;
-    
+    margin: 20px;   
+    overflow-y: auto;
 }
 
 .modal-comments {
+    background-color: rgba(2, 1, 1, 0.573);
     flex-grow: 1;
-    margin-bottom: 10px;
+    height: fit-content;
+    padding: 10px;
 }
 .modal-body > h2 {
-    margin:0 0 20px 0;
+    margin:0 0 15px 0;
 }
 .modal-body > form  {
     width: 100%;
