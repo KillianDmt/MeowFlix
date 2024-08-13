@@ -79,7 +79,7 @@ aside li a:active {
     margin-bottom: 80px;
 }
 
-.logout, .send, .close-modal {
+.logout, .send, .close-modal, .btn, .delete, .adminbtn {
     color: white;
     background-color: black;
     border-radius: 5px;
@@ -87,10 +87,11 @@ aside li a:active {
     padding: 5px 10px;
 }
 
-.logout:hover, .send:hover, .close-modal:hover {
+.logout:hover, .send:hover, .close-modal:hover, .btn:hover, .delete:hover, .adminbtn:hover {
     background-color: rgb(55, 53, 53);
+    cursor: pointer;
 }
-.logout:active, .send:active, .close-modal:active {
+.logout:active, .send:active, .close-modal:active, .btn:active, .delete:active, .adminbtn:active {
     background-color: rgb(111, 108, 108);
 }
 
@@ -173,6 +174,7 @@ main{
 }
 .slider .item:hover{
     filter: grayscale(0);
+    cursor: pointer;
 } 
 .slider[reverse="true"] .item{
     animation: reversePlay 18s linear infinite;
@@ -183,4 +185,118 @@ main{
     }to{
         left: 100%;
     }
+}
+
+/* modal */
+.modal {
+    background-image: url(../assets/images/background.jpg);
+    background-position: center;
+    background-size: cover; 
+    position: fixed;
+    z-index: 10;
+    top: 5%;
+    left: 15%;
+    right: 15%;
+    bottom: 10%;
+    box-shadow: 0 0 20em 25em rgb(10, 10, 10);
+    max-height: 647px;
+    
+
+    display: none;
+    grid-template-columns: 55% 45%;
+    grid-template-areas: 'modal-header modal-body';
+}
+
+.close-modal {
+    position: absolute;
+    top: 0;
+    right: 0;
+}
+
+.modal-header {
+    grid-area: modal-header;
+    max-height: fit-content;
+}
+
+.video-player{
+    aspect-ratio: 16 / 9;
+    width: 100%;
+}
+
+.modal-descriptions {
+    display: block;
+    margin: 20px 0 20px 20px;
+    padding: 10px 10px 10px 20px;
+    background-color: rgba(2, 1, 1, 0.573);
+}
+.modal-descriptions .author {
+    display: block;
+    padding-bottom: 1em;
+}
+.modal-descriptions .author::after {
+    content: '';
+    display: block;
+    height: 1px ;
+    background: white ;
+    width: 50%;
+}
+.title {
+    margin: 0 0 10px 0;
+}
+.author {
+    margin: 5px 0 10px 0;
+}
+.author ~ p {
+    margin: 0;
+}
+
+
+/* comments */
+.modal-body {
+    grid-area: modal-body;
+    margin: 20px;   
+    overflow-y: auto;
+}
+
+.modal-comments {
+    background-color: rgba(2, 1, 1, 0.573);
+    flex-grow: 1;
+    height: fit-content;
+    padding: 10px;
+}
+.modal-body > h2 {
+    margin:0 0 15px 0;
+}
+.modal-body > form  {
+    width: 100%;
+    margin-bottom: 20px;
+}
+
+form > input {
+    color: white;
+    background-color: transparent;
+    width: 70%;
+    border: none;
+    outline: none;
+    border-bottom: 1px solid white;
+    margin-bottom: 40px;
+}
+
+.comment {
+    border: 1px solid white;
+    border-radius: 1em;
+    padding: 10px;
+    margin-bottom: 10px;
+}
+.comment  h3 {
+    margin: 10px 0;
+}
+
+.comment > p {
+    margin: 0;
+}
+
+.comment .date {
+    font-size: x-small;
+    float: right;
 }

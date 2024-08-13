@@ -20,7 +20,6 @@ if (isset($_SESSION['id']) && isset($_SESSION['username'])) {
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>Cattoflix</title>
         <link rel="stylesheet" href="assets/mainstyle.css">
-        <link rel="stylesheet" href="assets/modal.css">
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
         <link rel="icon" href="assets\images\minilogo.png" type="image/icon">
     </head>
@@ -35,13 +34,11 @@ if (isset($_SESSION['id']) && isset($_SESSION['username'])) {
                 </div>
                 <div class="searchdiv">
                     <input type="search" placeholder="Search for any movie">
-                    <!-- <button><i class="fa-solid fa-bars"></i></button> -->
                 </div>
             </nav>
         </header>
         <aside>
             <div class="sidebar-content1">
-                <!-- <img alt="logo" src="assets\images\logo.png"> -->
                 <h1>Genres</h1>
                 <ul>
                     <li><a href="">Birds</a></li>
@@ -55,8 +52,9 @@ if (isset($_SESSION['id']) && isset($_SESSION['username'])) {
                 <ul>
                     <li><a href="">Something</a></li>
                     <li><a href="">Something</a></li>
-                    <li><a href="">Something</a></li>
-                    <li><a href="">Something</a></li>
+                    <?php if(isset($_SESSION['role']) && $_SESSION['role'] === 'admin') {?>
+                    <?= '<li><a href="backoffice.php">Backoffice</a></li>'?>
+                    <?php } ?>
                 </ul>
             </div>
             <div class="logout-container">
@@ -221,6 +219,7 @@ if (isset($_SESSION['id']) && isset($_SESSION['username'])) {
             </div>
             <div class="modal-body">
                 <h2>Comments</h2>
+                <!-- maybe this form will be shown only to logged in user -->
                 <form action="" method="post">
                     <input type="text" name="message" placeholder="Leave a comment here">
                     <button type="submit" name="send" class="send">Send</button>
@@ -257,7 +256,6 @@ if (isset($_SESSION['id']) && isset($_SESSION['username'])) {
                         </div>
                     <?php }; ?>
                     <!-- end comment generated -->
-
                 </div>
             </div>
         </div>

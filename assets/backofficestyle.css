@@ -1,0 +1,33 @@
+.backoffice {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-left: 80px;
+}
+.tables {
+    width: 100%;
+}
+.table {
+    display: none;
+    border-collapse: collapse; 
+    font-size: 1em;
+}
+tr:hover {
+    background-color: rgb(188, 2, 2);
+}
+th {
+    background-color: red;
+}
+th, td {
+    border: 1px solid white;
+    padding: 10px;
+}
+
+.btndiv {
+    margin: 40px;
+}
+
+.btn {
+    font-size: large;
+}
