@@ -87,56 +87,56 @@ if (isset($_SESSION['id']) && isset($_SESSION['username'])) {
                         <img src="https://via.placeholder.com/200x300?text=Movie+1" alt="">
                     </div>
                     <div class="item" style="--position: 2"
-                        data-title="Movie Title 1"
+                        data-title="Movie Title 2"
                         data-author="Author Name"
                         data-description="Description of the movie goes here."
                         data-video-url="https://www.youtube.com/embed/VIDEO_ID">
                         <img src="https://via.placeholder.com/200x300?text=Movie+1" alt="">
                     </div>
                     <div class="item" style="--position: 3"
-                        data-title="Movie Title 1"
+                        data-title="Movie Title 3"
                         data-author="Author Name"
                         data-description="Description of the movie goes here."
                         data-video-url="https://www.youtube.com/embed/VIDEO_ID">
                         <img src="https://via.placeholder.com/200x300?text=Movie+1" alt="">
                     </div>
                     <div class="item" style="--position: 4"
-                        data-title="Movie Title 1"
+                        data-title="Movie Title 4"
                         data-author="Author Name"
                         data-description="Description of the movie goes here."
                         data-video-url="https://www.youtube.com/embed/VIDEO_ID">
                         <img src="https://via.placeholder.com/200x300?text=Movie+1" alt="">
                     </div>
                     <div class="item" style="--position: 5"
-                        data-title="Movie Title 1"
+                        data-title="Movie Title 5"
                         data-author="Author Name"
                         data-description="Description of the movie goes here."
                         data-video-url="https://www.youtube.com/embed/VIDEO_ID">
                         <img src="https://via.placeholder.com/200x300?text=Movie+1" alt="">
                     </div>
                     <div class="item" style="--position: 6"
-                        data-title="Movie Title 1"
+                        data-title="Movie Title 6"
                         data-author="Author Name"
                         data-description="Description of the movie goes here."
                         data-video-url="https://www.youtube.com/embed/VIDEO_ID">
                         <img src="https://via.placeholder.com/200x300?text=Movie+1" alt="">
                     </div>
                     <div class="item" style="--position: 7"
-                        data-title="Movie Title 1"
+                        data-title="Movie Title 7"
                         data-author="Author Name"
                         data-description="Description of the movie goes here."
                         data-video-url="https://www.youtube.com/embed/VIDEO_ID">
                         <img src="https://via.placeholder.com/200x300?text=Movie+1" alt="">
                     </div>
                     <div class="item" style="--position: 8"
-                        data-title="Movie Title 1"
+                        data-title="Movie Title 8"
                         data-author="Author Name"
                         data-description="Description of the movie goes here."
                         data-video-url="https://www.youtube.com/embed/VIDEO_ID">
                         <img src="https://via.placeholder.com/200x300?text=Movie+1" alt="">
                     </div>
                     <div class="item" style="--position: 9"
-                        data-title="Movie Title 1"
+                        data-title="Movie Title 9"
                         data-author="Author Name"
                         data-description="Description of the movie goes here."
                         data-video-url="https://www.youtube.com/embed/VIDEO_ID">
@@ -219,45 +219,45 @@ if (isset($_SESSION['id']) && isset($_SESSION['username'])) {
             </div>
             <div class="modal-body">
                 <h2>Comments</h2>
-                <!-- maybe this form will be shown only to logged in user -->
-                <form action="" method="post">
+                <form action="comment.php" method="post">
                     <input type="text" name="message" placeholder="Leave a comment here">
+                    <!-- check the modal js and u will understand why there is this hidden input -->
+                    <input type="hidden" name="videotitle" value="">
                     <button type="submit" name="send" class="send">Send</button>
                 </form>
-
-                <div class="modal-comments">
-
-                    <!-- start example of comment...we will generate them with php from the database so I know what I did is usless u.u-->
-                    <?php if (isset($_POST['send'])) { ?>
-                        <div class="comment">
-                            <p class="date"><?= date('Y-m-d H:i:s'); ?></p>
-                            <h3><?= $_SESSION['username']; ?>:</h3>
-                            <p class="message-txt"><?= $_POST['message']; ?></p>
-                        </div>
-                        <div class="comment">
-                            <p class="date"><?= date('Y-m-d H:i:s'); ?></p>
-                            <h3><?= $_SESSION['username']; ?>:</h3>
-                            <p class="message-txt"><?= $_POST['message']; ?></p>
-                        </div>
-                        <div class="comment">
-                            <p class="date"><?= date('Y-m-d H:i:s'); ?></p>
-                            <h3><?= $_SESSION['username']; ?>:</h3>
-                            <p class="message-txt"><?= $_POST['message']; ?></p>
-                        </div>
-                        <div class="comment">
-                            <p class="date"><?= date('Y-m-d H:i:s'); ?></p>
-                            <h3><?= $_SESSION['username']; ?>:</h3>
-                            <p class="message-txt"><?= $_POST['message']; ?></p>
-                        </div>
-                        <div class="comment">
-                            <p class="date"><?= date('Y-m-d H:i:s'); ?></p>
-                            <h3><?= $_SESSION['username']; ?>:</h3>
-                            <p class="message-txt"><?= $_POST['message']; ?></p>
-                        </div>
-                    <?php }; ?>
-                    <!-- end comment generated -->
-                </div>
             </div>
+            <?php
+
+include("db.php");
+
+$query = ("SELECT * FROM comments WHERE video_title = :video_title ORDER BY data");;
+
+$statement = $pdo->prepare($query);
+
+
+// IMPORTANT READ THE COMMENT!!!
+// I don't know how to change $currentVideoTitle into the current video title ...maybe by sending/stocking it via url?
+
+$statement->execute(['video_title' => $currentVideoTitle]); 
+
+$results = $statement->fetchAll();
+
+foreach ($results as $row) {
+?>
+    <tr>
+        <td><?= $row['username']; ?></td>
+        <td><?= $row['date']; ?></td>
+        <td><?= $row['video_title']; ?></td>
+        <td><?= $row['messages']; ?></td>
+        <td>
+            <form method="post">
+                <button type="submit" name="deletebtn2" value="<?= $row['id'] ?>" class="delete">Delete</button>
+            </form>
+        </td>
+    </tr>
+<?php
+}
+?>
         </div>
         <script src="feature\modal.js"></script>
     </body>

@@ -145,7 +145,7 @@ if (isset($_POST["deletebtn2"])) {
                     foreach ($results as $row) {
                     ?>
                         <tr>
-                            <td><?= $row['username']; ?></td>
+                            <td><?= $row['username'];?></td>
                             <td><?= $row['email']; ?></td>
                             <td><?= $row['role']; ?></td>
                             <td>
@@ -167,14 +167,16 @@ if (isset($_POST["deletebtn2"])) {
             <table id="table2" class="table">
                 <thead>
                     <colgroup>
-                        <col style="width: 30%;">
-                        <col style="width: 65%;">
-                        <col style="width: 5%">
+                        <col style="width: 10%;">
+                        <col style="width: 10%;">
+                        <col style="width: 10%">
+                        <col style="width: 70%">
                     </colgroup>
                     <tr>
-                        <th>Date</th>
                         <th>Username</th>
-                        <th>Comments</th>
+                        <th>Date</th>
+                        <th>Video</th>
+                        <th>Message</th>
                     </tr>
                 </thead>
                 <tbody>
@@ -182,7 +184,7 @@ if (isset($_POST["deletebtn2"])) {
 
                     include("db.php");
 
-                    $query = ("SELECT * FROM comments ORDER by id");
+                    $query = ("SELECT * FROM comments ORDER by video_title");
 
                     $statement = $pdo->prepare($query);
                     $statement->execute();
@@ -194,7 +196,8 @@ if (isset($_POST["deletebtn2"])) {
                         <tr>
                             <td><?= $row['username']; ?></td>
                             <td><?= $row['date']; ?></td>
-                            <td><?= $row['message']; ?></td>
+                            <td><?= $row['video_title']; ?></td>
+                            <td><?= $row['messages']; ?></td>
                             <td>
                                 <form method="post">
                                     <button type="submit" name="deletebtn2" value="<?= $row['id'] ?>" class="delete">Delete</button>
