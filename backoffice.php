@@ -9,7 +9,7 @@ if (isset($_POST['logout'])) {
     header("Location: form.php");
 }
 
-// delete button
+// delete button first table
 include("db.php");
 
 if (isset($_POST["deletebtn"])) {
@@ -22,6 +22,30 @@ if (isset($_POST["deletebtn"])) {
     $statement->execute($data);
 }
 
+// admin btn
+if (isset($_POST["adminbtn"])) {
+    $admin_this = $_POST["adminbtn"];
+    
+    //  fetch the current role for the user
+    $fetch_query = "SELECT role FROM utilisateur WHERE id = :id_element";
+    $fetch_statement = $pdo->prepare($fetch_query);
+    $fetch_statement->execute([':id_element' => $admin_this]);
+    $current_role = $fetch_statement->fetchColumn();
+
+    if ($current_role !== 'admin') {
+        //  If the user is not an admin make admin
+        $query = "UPDATE utilisateur SET role='admin' WHERE id = :id_element";
+    } else {
+        //  If the user is already an admin, remove admin role
+        $query = "UPDATE utilisateur SET role = 'none' WHERE id = :id_element";
+    }
+
+    $statement = $pdo->prepare($query);
+    $data = [':id_element' => $admin_this];
+    $statement->execute($data);
+}
+
+// delete btn for second table
 if (isset($_POST["deletebtn2"])) {
 
     $delete_this = $_POST["deletebtn2"];
