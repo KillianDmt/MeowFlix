@@ -230,15 +230,18 @@ if (isset($_SESSION['id']) && isset($_SESSION['username'])) {
 
 include("db.php");
 
-$query = ("SELECT * FROM comments WHERE video_title = :video_title ORDER BY data");;
+$query = ("SELECT * FROM comments WHERE video_id = :video_id ORDER BY date");;
 
 $statement = $pdo->prepare($query);
 
 
 // IMPORTANT READ THE COMMENT!!!
 // I don't know how to change $currentVideoTitle into the current video title ...maybe by sending/stocking it via url?
+// _SESSION VIDEO ID ? 
 
-$statement->execute(['video_title' => $currentVideoTitle]); 
+
+// $currentVideoId = ;...
+$statement->execute(['video_id' => $currentVideoId]); 
 
 $results = $statement->fetchAll();
 
