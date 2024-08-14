@@ -221,47 +221,13 @@ if (isset($_SESSION['id']) && isset($_SESSION['username'])) {
                 <h2>Comments</h2>
                 <form action="comment.php" method="post">
                     <input type="text" name="message" placeholder="Leave a comment here">
-                    <!-- check the modal js and u will understand why there is this hidden input -->
                     <input type="hidden" name="videotitle" value="">
                     <button type="submit" name="send" class="send">Send</button>
                 </form>
             </div>
-            <?php
-
-include("db.php");
-
-$query = ("SELECT * FROM comments WHERE video_title = :video_title ORDER BY data");;
-
-$statement = $pdo->prepare($query);
-
-
-// IMPORTANT READ THE COMMENT!!!
-// I don't know how to change $currentVideoTitle into the current video title ...maybe by sending/stocking it via url?
-
-$statement->execute(['video_title' => $currentVideoTitle]); 
-
-$results = $statement->fetchAll();
-
-foreach ($results as $row) {
-?>
-    <tr>
-        <td><?= $row['username']; ?></td>
-        <td><?= $row['date']; ?></td>
-        <td><?= $row['video_title']; ?></td>
-        <td><?= $row['messages']; ?></td>
-        <td>
-            <form method="post">
-                <button type="submit" name="deletebtn2" value="<?= $row['id'] ?>" class="delete">Delete</button>
-            </form>
-        </td>
-    </tr>
-<?php
-}
-?>
         </div>
         <script src="feature\modal.js"></script>
     </body>
-
     </html>
 <?php } else {
     header('Location: form.php');

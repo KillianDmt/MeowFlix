@@ -5,10 +5,10 @@ session_start();
 include 'db.php';
 
 if (isset($_POST['send']) && isset($_SESSION['username'])) {
-    $message = $_POST['message'];
+    $message = htmlspecialchars($_POST['message']);
     $videotitle = $_POST['videotitle'];
     $username = $_SESSION['username'];
-    $date = date('Y-m-d H:i');
+    $date = date('Y-m-d');
 
 
     $stmt = $pdo->prepare("INSERT INTO comments (date, username, video_title, messages) VALUES (:date, :username, :video_title, :messages)");
