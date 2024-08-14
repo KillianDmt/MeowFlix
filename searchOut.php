@@ -15,9 +15,7 @@ if (isset($_SESSION['id']) && isset($_SESSION['username'])) {
 
         header("searchOut.php");
     }
-
 ?>
-
 
 <!DOCTYPE html>
 <html lang="en">
@@ -40,10 +38,10 @@ if (isset($_SESSION['id']) && isset($_SESSION['username'])) {
             </div>
 
             
-            <form action="searchOut.php" method="POST" class="searchdiv">
+            <div class="searchdiv">
                 <input type="search" method="POST" name="searchBar" placeholder="Search for any movie">
                 <!-- <button><i class="fa-solid fa-bars"></i></button> -->
-            </form>
+            </div>
         </nav>
     </header>
     <aside>
@@ -70,17 +68,8 @@ if (isset($_SESSION['id']) && isset($_SESSION['username'])) {
         </div>
     </aside>
     <!-- <div> if u want the space to the right side just re-active this div-->
-        <div class="featured">
-            <div class="featured-content">
-                <img src="https://via.placeholder.com/300x100?text=MONEY+HEIST" alt="logo" class="logo"/>
-                <div>
-                    <span class="rating">8.8/10</span>
-                    <span class="streams">2K+ Streams</span>
-                </div>
-            </div>
-        </div>
         <main>
-            <h2 id="titlecarousel1" class="row-title">Birds</h2>
+            <h2 id="titlecarousel1" class="row-title"><?php echo $_POST["searchBar"] ?></h2>
             <div id="carousel1" class="slider" style="
                 --width: 200px;
                 --height: 200px;
@@ -107,155 +96,11 @@ if (isset($_SESSION['id']) && isset($_SESSION['username'])) {
                         throw new \PDOException($e->getMessage(), (int)$e->getCode());
                     }
                     
-                    $tags = 'birds'; // Par exemple, récupérer les vidéos du genre "action"
-                    $stmt = $pdo->prepare('SELECT title, thumbnails, descr FROM video WHERE SearchTag = ?');// 
+                    $tags = $_POST["searchBar"];
+                    $stmt = $pdo->prepare('SELECT title, thumbnails, descr, id FROM video WHERE searchTag LIKE ? ');// 
                     $stmt->execute([$tags]);
                     $stmt->execute();
                     $videos = $stmt->fetchAll();
-
-
-                    $X=1;
-                    foreach ($videos as $video) {
-                        //How to include modals in it ?
-                        echo "<div class='item' style='--position: $X'>";
-                        echo "<img src='$video[thumbnails]'></p>";
-                        //include("./modal.php"); Séparer modal et button 
-                        echo "</div>";
-                        $X++;
-                    }
-
-                    ?>
-                </div>
-            </div>
-            
-            <h2 id="titlecarousel2"class="row-title">Cats</h2>
-            <div id="carousel2" class="slider" reverse="true" style="
-                --width: 200px;
-                --height: 200px;
-                --quantity: 9;
-            ">
-                <div class="list">
-                <?php
-                    $host = 'localhost'; // Adresse du serveur
-                    $db = 'meowflix'; // Nom de la base de données
-                    $user = 'root'; // Nom d'utilisateur
-                    $pass = ''; // Mot de passe
-                    $charset = 'utf8mb4'; // Jeu de caractères
-                    
-                    $dsn = "mysql:host=$host;dbname=$db;charset=$charset";
-                    $options = [
-                        PDO::ATTR_ERRMODE            => PDO::ERRMODE_EXCEPTION,
-                        PDO::ATTR_DEFAULT_FETCH_MODE => PDO::FETCH_ASSOC,
-                        PDO::ATTR_EMULATE_PREPARES   => false,
-                    ];
-                    
-                    try {
-                        $pdo = new PDO($dsn, $user, $pass, $options);
-                    } catch (\PDOException $e) {
-                        throw new \PDOException($e->getMessage(), (int)$e->getCode());
-                    }
-                    
-                    $tags = 'cats'; // Par exemple, récupérer les vidéos du genre "action"
-                    $stmt = $pdo->prepare('SELECT title, thumbnails, descr FROM video WHERE SearchTag = ?');// 
-                    $stmt->execute([$tags]);
-                    $stmt->execute();
-                    $videos = $stmt->fetchAll();
-
-
-                    $X=1;
-                    foreach ($videos as $video) {
-                        //How to include modals in it ?
-                        echo "<div class='item' style='--position: $X'>";
-                        echo "<img src='$video[thumbnails]'></p>";
-                        //include("./modal.php"); Séparer modal et button 
-                        echo "</div>";
-                        $X++;
-                    }
-
-                    ?>
-                </div>
-            </div>
-            <h2 id="titlecarousel1" class="row-title">Fish</h2>
-            <div id="carousel1" class="slider" style="
-                --width: 200px;
-                --height: 200px;
-                --quantity: 9;
-            ">
-                <div class="list">
-                <?php
-                    $host = 'localhost'; // Adresse du serveur
-                    $db = 'meowflix'; // Nom de la base de données
-                    $user = 'root'; // Nom d'utilisateur
-                    $pass = ''; // Mot de passe
-                    $charset = 'utf8mb4'; // Jeu de caractères
-                    
-                    $dsn = "mysql:host=$host;dbname=$db;charset=$charset";
-                    $options = [
-                        PDO::ATTR_ERRMODE            => PDO::ERRMODE_EXCEPTION,
-                        PDO::ATTR_DEFAULT_FETCH_MODE => PDO::FETCH_ASSOC,
-                        PDO::ATTR_EMULATE_PREPARES   => false,
-                    ];
-                    
-                    try {
-                        $pdo = new PDO($dsn, $user, $pass, $options);
-                    } catch (\PDOException $e) {
-                        throw new \PDOException($e->getMessage(), (int)$e->getCode());
-                    }
-                    
-                    $tags = 'fish'; // Par exemple, récupérer les vidéos du genre "action"
-                    $stmt = $pdo->prepare('SELECT id, title, thumbnails, descr FROM video WHERE SearchTag = ?');// 
-                    $stmt->execute([$tags]);
-                    $stmt->execute();
-                    $videos = $stmt->fetchAll();
-
-
-                    $X=1;
-                    foreach ($videos as $video) {
-                        //How to include modals in it ?
-                        echo "<div class='item' style='--position: $X'>";
-                        echo "<img src='$video[thumbnails]'></p>";
-                        //include("./modal.php"); Séparer modal et button 
-                        echo "</div>";
-                        $X++;
-                    }
-
-                    ?>
-               </div>
-            </div>
-            
-            <h2 id="titlecarousel2"class="row-title">Games</h2>
-            <div id="carousel2" class="slider" reverse="true" style="
-                --width: 200px;
-                --height: 200px;
-                --quantity: 9;
-            ">
-                <div class="list">
-                <?php
-                    $host = 'localhost'; // Adresse du serveur
-                    $db = 'meowflix'; // Nom de la base de données
-                    $user = 'root'; // Nom d'utilisateur
-                    $pass = ''; // Mot de passe
-                    $charset = 'utf8mb4'; // Jeu de caractères
-                    
-                    $dsn = "mysql:host=$host;dbname=$db;charset=$charset";
-                    $options = [
-                        PDO::ATTR_ERRMODE            => PDO::ERRMODE_EXCEPTION,
-                        PDO::ATTR_DEFAULT_FETCH_MODE => PDO::FETCH_ASSOC,
-                        PDO::ATTR_EMULATE_PREPARES   => false,
-                    ];
-                    
-                    try {
-                        $pdo = new PDO($dsn, $user, $pass, $options);
-                    } catch (\PDOException $e) {
-                        throw new \PDOException($e->getMessage(), (int)$e->getCode());
-                    }
-                    
-                    $tags = 'games%20for%20cats'; // Par exemple, récupérer les vidéos du genre "action"
-                    $stmt = $pdo->prepare('SELECT id, title, thumbnails, descr FROM video WHERE SearchTag = ?');// 
-                    $stmt->execute([$tags]);
-                    $stmt->execute();
-                    $videos = $stmt->fetchAll();
-
 
 
                     $X=1;
@@ -269,7 +114,45 @@ if (isset($_SESSION['id']) && isset($_SESSION['username'])) {
                         $X++;
                     }
 
+                    $tags = $_POST["searchBar"]; // Par exemple, récupérer les vidéos du genre "action"
+                    $stmt = $pdo->prepare('SELECT title, thumbnails, descr, id FROM video WHERE title LIKE ? ');// 
+                    $stmt->execute([$tags]);
+                    $stmt->execute();
+                    $videos = $stmt->fetchAll();
+
+
+                    foreach ($videos as $video) {
+                        $title="".$video["title"]."";
+                        $description= "".$video["descr"]."";
+                        $vid="".$video["id"]."";
+                        echo "<div class='item' data-title='$title' data-description='$description' data-video-url='https://www.youtube.com/embed/$vid' style='--position: $X'>";
+                        echo "<img src='$video[thumbnails]'></p>"; 
+                        echo "</div>";
+                        $X++;
+                    }
+
+                    $tags = $_POST["searchBar"]; // Par exemple, récupérer les vidéos du genre "action"
+                    $stmt = $pdo->prepare('SELECT title, thumbnails, descr, id FROM video WHERE descr LIKE ? ');// 
+                    $stmt->execute([$tags]);
+                    $stmt->execute();
+                    $videos = $stmt->fetchAll();
+
+
+                    foreach ($videos as $video) {
+                        $title="".$video["title"]."";
+                        $description= "".$video["descr"]."";
+                        $vid="".$video["id"]."";
+                        echo "<div class='item' data-title='$title' data-description='$description' data-video-url='https://www.youtube.com/embed/$vid' style='--position: $X'>";
+                        echo "<img src='$video[thumbnails]'></p>"; 
+                        echo "</div>";
+                        $X++;
+                    }
+
                     ?>
+                </div>
+            </div>
+            
+            
                 </div>
             </div>
         </main>
@@ -286,7 +169,7 @@ if (isset($_SESSION['id']) && isset($_SESSION['username'])) {
                 <div class="modal-descriptions">
                     <h1 class="title">Insert title</h1>
                     <p class="author">channel name or author name</p>
-                    <p>Here's the description of the videosdasd sdasda dasdsd adsad as sdsds sdsd sdsa dd asdsa dsadsdasd sadsa sdadsdsaaaaaaaaaaaaaaaa saaaaa. Here's the description of the videosdasd sdasda dasdsd adsad as sdsds sdsd sdsa dd asdsa dsadsdasd sadsa sdadsdsaaaw</p>
+                    <p class="descr"> Description</p>
                 </div>
             </div>
             <div class="modal-body">
