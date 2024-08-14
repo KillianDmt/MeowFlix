@@ -18,6 +18,9 @@ listItems.forEach(item => {
         document.querySelector('.modal .modal-descriptions p').textContent = description;
         document.querySelector('.modal .video-player').src = videoUrl;
 
+        // thx to this I save the current title film into the hidden input that will be send by the form to the db
+        document.querySelector('input[name="videotitle"]').value = title;
+      
         // Show the modal
         modal.style.display = 'grid';
     });

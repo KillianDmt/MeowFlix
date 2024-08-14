@@ -72,7 +72,7 @@ if (isset($_SESSION['id']) && isset($_SESSION['username'])) {
     <!-- <div> if u want the space to the right side just re-active this div-->
         <div class="featured">
             <div class="featured-content">
-                <img src="https://via.placeholder.com/300x100?text=MONEY+HEIST" alt="logo" class="logo"/>
+                <img src="https://via.placeholder.com/300x100?text=MONEY+HEIST" alt="logo" class="logo" />
                 <div>
                     <span class="rating">8.8/10</span>
                     <span class="streams">2K+ Streams</span>
