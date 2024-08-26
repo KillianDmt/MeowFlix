@@ -10,7 +10,7 @@ if (isset($_POST['logout'])) {
 }
 
 // delete button first table
-include("db.php");
+include("../db.php");
 
 if (isset($_POST["deletebtn"])) {
 
@@ -65,10 +65,10 @@ if (isset($_POST["deletebtn2"])) {
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Backoffice</title>
-    <link rel="stylesheet" href="assets/mainstyle.css">
-    <link rel="stylesheet" href="assets/backofficestyle.css">
+    <link rel="stylesheet" href="../assets/mainstyle.css">
+    <link rel="stylesheet" href="../assets/backofficestyle.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-    <link rel="icon" href="assets\images\minilogo.png" type="image/icon">
+    <link rel="icon" href="../assets/images/minilogo.png" type="image/icon">
 
 </head>
 
@@ -76,7 +76,7 @@ if (isset($_POST["deletebtn2"])) {
     <header>
         <nav>
             <div class="logodiv">
-                <img src="assets\images\logo.png">
+                <img src="../assets/images/logo.png">
                 <h1>CATTOFLIX</h1>
                 <p style="color: red;">Hello, <?php echo $_SESSION['username']; ?></p>
             </div>
@@ -91,15 +91,15 @@ if (isset($_POST["deletebtn2"])) {
             <ul>
                 <li><a href="">Birds</a></li>
                 <li><a href="">Fish</a></li>
-                <li><a href="">Wild</a></li>
+                <li><a href="">Games</a></li>
                 <li><a href="">Cathub</a></li>
             </ul>
         </div>
         <div class="sidebar-content2">
             <h1>Options</h1>
             <ul>
-                <li><a href="">Something</a></li>
-                <li><a href="">Something</a></li>
+                <li><a href="">Search</a></li>
+                <li><a href="">CGU</a></li>
                 <?php if (isset($_SESSION['role']) && $_SESSION['role'] === 'admin') { ?>
                     <?= '<li><a href="backoffice.php">Backoffice</a></li>' ?>
                 <?php } ?>
@@ -133,7 +133,7 @@ if (isset($_POST["deletebtn2"])) {
                 <tbody>
                     <?php
 
-                    include("db.php");
+                    include("../db.php");
 
                     $query = ("SELECT * FROM utilisateur ORDER by id");
 
@@ -182,7 +182,7 @@ if (isset($_POST["deletebtn2"])) {
                 <tbody>
                     <?php
 
-                    include("db.php");
+                    include("../db.php");
 
                     $query = ("SELECT * FROM comments ORDER by video_title");
 
@@ -211,7 +211,7 @@ if (isset($_POST["deletebtn2"])) {
             </table>
         </div>
     </div>
-    <script src="feature/backofficescript.js"></script>
+    <script src="../feature/backofficescript.js"></script>
 </body>
 
 </html>

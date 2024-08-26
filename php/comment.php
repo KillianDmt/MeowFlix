@@ -2,7 +2,7 @@
 session_start();
 
 
-include 'db.php';
+include '../db.php';
 
 if (isset($_POST['send']) && isset($_SESSION['username'])) {
     $message = htmlspecialchars($_POST['message']);
@@ -19,7 +19,7 @@ if (isset($_POST['send']) && isset($_SESSION['username'])) {
     
     $stmt->execute();
 
-    header("Location: main.php"); 
+    header("Location: ../index.php"); 
     exit();
 }
 ?>

@@ -243,6 +243,7 @@ main{
 }
 .title {
     margin: 0 0 10px 0;
+    font-size: 2em;
 }
 .author {
     margin: 5px 0 10px 0;

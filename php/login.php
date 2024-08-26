@@ -3,7 +3,7 @@
 
 Si vous oubliez de lancer session_start()  , vous ne pourrez pas accéder à la variable superglobale   $_SESSION  */
 session_start();
-include 'db.php';
+include '../db.php';
 
 if (isset($_POST['email'], $_POST['password'])) {
 
@@ -19,7 +19,7 @@ if (isset($_POST['email'], $_POST['password'])) {
 
   if (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
 
-    header('Location: form.php?error=Invalid email&form=login');
+    header('Location: pages/form.php?error=Invalid email&form=login');
 
   } else {
     $query = $pdo->prepare('SELECT password FROM utilisateur WHERE email = ?');
@@ -85,10 +85,10 @@ if (isset($_POST['email'], $_POST['password'])) {
       //   }
       // }
 
-      header('Location: main.php');
+      header('Location: ../index.php');
       exit();
     } else {
-      header('Location: form.php?error=Password or Email incorrect&form=login');
+      header('Location: ../pages/form.php?error=Password or Email incorrect&form=login');
     }
   }
 }

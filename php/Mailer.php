@@ -48,7 +48,7 @@ if (envoi_mail($_POST['name'],$_POST['email'],$_POST['subject'],$_POST['message'
 
 envoi_mail($_POST['name'],$_POST['email'],$_POST['subject'],$_POST['message']);
 
-
+*/
 
  
 

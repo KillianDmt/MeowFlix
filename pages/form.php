@@ -5,16 +5,16 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Sign in</title>
-    <link rel="stylesheet" href="assets/style.css">
-    <link rel="icon" href="assets\images\minilogo.png" type="image/icon">
+    <link rel="stylesheet" href="../assets/style.css">
+    <link rel="icon" href="../assets/images/minilogo.png" type="image/icon">
 </head>
 
 <body>
     <div class="background"></div>
     <div class="container">
-        <img src="assets\images\logo.png" alt="Cattoflix logo" class="logo">
+        <img src="../assets/images/logo.png" alt="Cattoflix logo" class="logo">
         <div class="login-box">
-            <form id="form1" action="login.php" method="post">
+            <form id="form1" action="../php/login.php" method="post">
             <h1>Sign In</h1>
             <?php if (isset($_GET['error']) && $_GET['form'] === 'login') { ?>
                     <div class="alert"><span class="closebtn" onclick="this.parentElement.style.display='none';">&times;</span><?=$_GET['error']?></div>
@@ -31,7 +31,7 @@
                 </div>
 
             </form>
-            <form id="form2" action="Inscription.php" method="post" style="display: none;">
+            <form id="form2" action="../php/Inscription.php" method="post" style="display: none;">
                 <h1>Register now</h1>
                 <?php if (isset($_GET['error']) && $_GET['form'] === 'register') { ?>
                     <div class="alert"><span class="closebtn" onclick="this.parentElement.style.display='none';">&times;</span><?=$_GET['error']?></div>
@@ -61,8 +61,8 @@
                 <a href="#">link to deployed site</a>
                 
             </div>
-            <a href="https://becode.org/"><img src="assets\images\becodelogo.png"></a>
+            <a href="https://becode.org/"><img src="../assets/images/becodelogo.png"></a>
     </footer>
-    <script src="feature\formscript.js"></script>
+    <script src="../feature/formscript.js"></script>
 </body>
 </html>

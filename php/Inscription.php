@@ -2,7 +2,7 @@
 
 //Inscription
 
-include 'db.php';
+include '../db.php';
 
 if (isset($_POST["email"]) && isset($_POST["password"]) && isset($_POST["username"])) {
     function validate($data) {
@@ -17,27 +17,27 @@ if (isset($_POST["email"]) && isset($_POST["password"]) && isset($_POST["usernam
     $password = validate($_POST["password"]);
 
     if (empty($email)) {
-        header('Location: form.php?error=Email is required&form=register');
+        header('Location: ../pages/form.php?error=Email is required&form=register');
         exit();
     } elseif (empty($username)) {
-        header('Location: form.php?error=Username is required&form=register');
+        header('Location: ../pages/form.php?error=Username is required&form=register');
         exit();
     } elseif (empty($password)) {
-        header('Location: form.php?error=Password is required&form=register');
+        header('Location: ../pages/form.php?error=Password is required&form=register');
         exit();
     } elseif (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
-        header('Location: form.php?error=Invalid email format&form=register');
+        header('Location: ../pages/form.php?error=Invalid email format&form=register');
         exit();
     } else {
         $role = "none";
 
         $query = $pdo->prepare("INSERT INTO utilisateur (`email`, `username`, `password`, `role`) VALUES (?,?,?,?)");
         $query->execute(array($email, $username, $password, $role));
-        header('Location: form.php?error=You are registred! Log in now!&form=login');
+        header('Location: ../pages/form.php?error=You are registred! Log in now!&form=login');
         exit();
     }
 } else {
-    header('Location: form.php?error=All fields are required&form=register');
+    header('Location: ../pages/form.php?error=All fields are required&form=register');
     exit();
 }
 
